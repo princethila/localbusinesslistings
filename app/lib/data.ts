@@ -5,6 +5,7 @@ const supabase = createClient();
 
 export async function getCategories(): Promise<Categories[]>{
     try{
+        const supabase = await createClient(); 
         const { data: categories } = await supabase.from("categories").select();
         return categories as Categories[]
     }catch (error) {
