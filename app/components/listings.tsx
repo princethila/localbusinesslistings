@@ -68,7 +68,21 @@ import {
                 const itemCategories = new Set(itemCategoriesArray.map(category => category.trim().toLowerCase()));
                 return Array.from(selectedCategoriesSet).every(option => itemCategories.has(option));
     
-            }): businesses;
+            }).sort((a, b) => {
+                // Sort by verified status first
+                if (a.verified === b.verified) return 0;
+                return a.verified ? -1 : 1; // `verified: true` appears first
+            }).sort((a, b) => {
+                // Then sort alphabetically by name (case insensitive)
+                return a.business_name.localeCompare(b.business_name);
+            }): businesses.sort((a, b) => {
+                // Sort by verified status first
+                if (a.verified === b.verified) return 0;
+                return a.verified ? -1 : 1; // `verified: true` appears first
+            }).sort((a, b) => {
+                // Then sort alphabetically by name (case insensitive)
+                return a.business_name.localeCompare(b.business_name);
+            });
             
         const handleSearch = (newValue: MultiValue<Categories>, actionMeta: ActionMeta<Categories>) => {
             setSelectedCategories(newValue as Categories[]);
