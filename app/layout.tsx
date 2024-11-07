@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <nav className='top-0 sticky bg-white/30 backdrop-blur-md px-4 sm:px-24 z-10'>
+        <nav className='top-0 sticky bg-white/30 backdrop-blur-md px-4 sm:px-4 z-10'>
           <div className="py-12">
             <div className="mx-auto px-2 border-x-0">
               <div className="flex justify-between items-center h-16">
