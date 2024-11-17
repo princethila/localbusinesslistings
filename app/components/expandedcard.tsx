@@ -62,6 +62,7 @@ export default function ExpandedView({businessobject}: ExpandedViewProps){
                         <div className='flex items-middle pb-1'>
                             <ShoppingBagIcon className="mr-1 h-3 w-3 text-gray-500" />
                             <p className="text-gray-500 text-xs">Products/services:</p>
+                            
                         </div>
                         <div className="text-semibold text-xs font-semibold">
                         {businessobject.products_services
