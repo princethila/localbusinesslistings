@@ -23,6 +23,7 @@ export type Businesses = {
 export type Reviews = {
     id: string,
     user_id: string,
+    user_telegram_id: string,
     business_id: string,
     created_at: string,
     rating: number,
@@ -35,3 +36,19 @@ export type BusinessWithReviews = {
     business: Businesses;
     reviews: Reviews[];
 };
+
+
+export type Business = {
+    id: string,
+    business_name: string,
+    description: string,
+    area: string,
+    categories: string,
+    phone_number: string,
+    email_address: string,
+    telegram_username: string,
+    whatsapp_number: string,
+    posted_by: string,
+    verified: boolean,
+    products_services: string
+}

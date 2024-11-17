@@ -74,12 +74,12 @@ export default function ExpandedView({businessobject}: ExpandedViewProps){
 
                         
                     </div>
-                    {/* <div className='border-t mt-2'>
+                    <div className='border-t mt-2'>
                         <Link href={`/navpage?business_id=${JSON.stringify(businessobject.id)}`} passHref>
-                            <p className='text-xs pt-4 text-blue-500 hover:underline'>Rate this business</p>
+                            <p className='text-xs pt-4 text-blue-500 hover:underline'>View reviews</p>
                     </Link>
                     
-                </div> */}
+                </div>
             </div>
         </div>
     )

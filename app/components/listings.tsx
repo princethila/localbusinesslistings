@@ -5,6 +5,7 @@ import { Categories, Businesses, BusinessWithReviews} from "../lib/definitions"
 import { getCategories, getBusinesses, getBusinessesWithReviews } from '../lib/data'
 import { createClient } from '@/utils/supabase/client'
 import ExpandedView from './expandedcard';
+import StarRating from './starating';
 
 
 import {
@@ -182,6 +183,12 @@ import {
                                             <p className='text-lg font-semibold pr-1'>{businessobject.business.business_name}</p>
                                             {businessobject.business.verified? <CheckBadgeIcon className="mr-1.5 h-5 w-5 text-blue-500" />:''}
                                         </div>
+                                        {calculateAverageRating(businessobject) > 0 && (
+                                                <div className="flex items-center mb-2">
+                                                    <StarRating rating={calculateAverageRating(businessobject)} />
+                                                    <p className="text-gray-500  ml-2 text-xs">({calculateTotalReviews(businessobject)} reviews)</p>
+                                                </div>
+                                                    )}
                                         {businessobject.business.description?<p className='text-gray-500 text-xs line-clamp-2'>{businessobject.business.description}</p>:
                                         <p className='text-gray-500 text-xs line-clamp-2'>{businessobject.business.products_services}</p>}
                                     </div>
